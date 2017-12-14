@@ -35,8 +35,6 @@ fun main(args: Array<String>) {
             val graph = parseFile(args.first())
             solution = Greedy(graph).solve()
             solution = Lk(graph, solution).run() + graph.first
-            println("Cost is:")
-            println(getCost(solution))
             outputResult(solution, args.last())
         }
 
