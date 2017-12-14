@@ -20,7 +20,7 @@ class LkPath(private val path: List<Node>) {
 
     fun rearrange(node: Node): LkPath {
         val index = path.indexOf(node) + 1
-        return LkPath(listOf(path.take(index), path.takeLast(path.size - index).reversed()).flatten())
+        return LkPath(path.take(index) + path.takeLast(path.size - index).reversed())
     }
 
     fun reunite(): LkTour = LkTour(path)

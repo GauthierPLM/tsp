@@ -23,7 +23,7 @@ class LinKernigan(private val graph: Graph, private val solution: List<Node>) {
 
         if (maxGain > 0) {
             val newTour = bestPath?.reunite()
-            if (newTour != null && newTour.cost() < tour.cost())
+            if (newTour != null && newTour.cost < tour.cost)
                 return newTour
         }
 
