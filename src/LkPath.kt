@@ -3,7 +3,7 @@ class LkPath(private val path: List<Node>) {
         get() = this.path.last()
 
     companion object {
-        lateinit var graph: Graph
+        private lateinit var graph: Graph
 
         fun initGraph(graph: Graph) {
             this.graph = graph

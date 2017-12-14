@@ -1,5 +1,5 @@
 class Graph {
-    val nodes: MutableList<Node> = mutableListOf()
+    private val nodes: MutableList<Node> = mutableListOf()
     val size
         get() = nodes.size
 
@@ -9,10 +9,6 @@ class Graph {
     operator fun get(nodeId: Int): Node = nodes.getOrElse(nodeId) {
         nodes.add(it, Node(it))
         nodes[it]
-    }
-
-    fun distance(a: Node, b: Int): Int {
-        return a.neighbors[nodes[b]]!!
     }
 
     fun distance(a: Node, b: Node): Int {

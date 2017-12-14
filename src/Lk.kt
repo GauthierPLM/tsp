@@ -1,4 +1,4 @@
-class LinKernigan(private val graph: Graph, private val solution: List<Node>) {
+class Lk(private val graph: Graph, private val solution: List<Node>) {
     companion object {
         var timedOut = false
     }

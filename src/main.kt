@@ -34,7 +34,7 @@ fun main(args: Array<String>) {
         val r = Runnable {
             val graph = parseFile(args.first())
             solution = Greedy(graph).solve()
-            solution = LinKernigan(graph, solution).run() + graph.first
+            solution = Lk(graph, solution).run() + graph.first
             println("Cost is:")
             println(getCost(solution))
             outputResult(solution, args.last())
@@ -47,11 +47,11 @@ fun main(args: Array<String>) {
     }
     catch (e: InterruptedException) {
         // The thread was interrupted during sleep, wait or join
-        LinKernigan.timedOut = true
+        Lk.timedOut = true
     }
     catch (e: TimeoutException) {
         // Took too long!
-        LinKernigan.timedOut = true
+        Lk.timedOut = true
     }
     finally {
         service.shutdown()
